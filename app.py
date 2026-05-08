@@ -204,8 +204,7 @@ with st.sidebar:
     cfg = ARTIST_PRESETS[artist_name]
     st.markdown(f"**Artist ID:** `{cfg['artist_id']}`")
     st.markdown(f"**Studio albums (Wikipedia):** {len(cfg['studio_albums'])}")
-    if not DATA_FILE.exists():
-        st.error("`tracks_features.csv` not found. The app will try to download it on first run.")
+
 
 df = load_dataset(DATA_FILE)
 if df.empty:
