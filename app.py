@@ -16,7 +16,7 @@ from wordcloud import STOPWORDS, WordCloud
 
 st.set_page_config(page_title="Spotify + Lyrics Explorer", page_icon="🎵", layout="wide")
 
-DATA_FILE = Path("tracks_features.csv")
+DATA_FILE = Path("tracks_small.csv") if Path("tracks_small.csv").exists() else Path("tracks_features.csv")
 CACHE_PATH = Path("lyrics_cache.json")
 
 ARTIST_PRESETS = {
@@ -75,15 +75,7 @@ REISSUE_BLACKLIST = re.compile(
 @st.cache_data(show_spinner="Loading dataset…")
 def load_dataset(path: Path) -> pd.DataFrame:
     if not path.exists():
-        try:
-            import gdown
-        except ImportError:
-            return pd.DataFrame()
-        with st.spinner("Downloading dataset (~346 MB, one-time)…"):
-            gdown.download(id="1jsXTNtGhOrsCApQctYx-hRxAQASAcPlI",
-                           output=str(path), quiet=True)
-        if not path.exists():
-            return pd.DataFrame()
+        return pd.DataFrame()
     return pd.read_csv(path)
 
 
@@ -204,7 +196,6 @@ with st.sidebar:
     cfg = ARTIST_PRESETS[artist_name]
     st.markdown(f"**Artist ID:** `{cfg['artist_id']}`")
     st.markdown(f"**Studio albums (Wikipedia):** {len(cfg['studio_albums'])}")
-
 
 df = load_dataset(DATA_FILE)
 if df.empty:
