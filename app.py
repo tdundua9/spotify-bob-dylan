@@ -95,9 +95,6 @@ def match_studio_album(short_name, original_album, canon_set):
     norm = normalize(short_name)
     if norm in canon_set:
         return canon_set[norm]
-    for cn, c in canon_set.items():
-        if (norm.startswith(cn) or cn.startswith(norm)) and len(cn) >= 4 and len(norm) >= 4:
-            return c
     return None
 
 
