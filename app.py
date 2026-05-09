@@ -28,7 +28,8 @@ ARTIST_PRESETS = {
             ("Bringing It All Back Home", 1965), ("Highway 61 Revisited", 1965),
             ("Blonde on Blonde", 1966), ("John Wesley Harding", 1967),
             ("Nashville Skyline", 1969), ("Self Portrait", 1970),
-            ("New Morning", 1970), ("Dylan", 1973), ("Planet Waves", 1974),
+            ("New Morning", 1970), ("Dylan", 1973),
+            ("Pat Garrett & Billy the Kid", 1973), ("Planet Waves", 1974),
             ("Blood on the Tracks", 1975), ("The Basement Tapes", 1975),
             ("Desire", 1976), ("Street-Legal", 1978),
             ("Slow Train Coming", 1979), ("Saved", 1980), ("Shot of Love", 1981),
@@ -41,6 +42,7 @@ ARTIST_PRESETS = {
             ("Christmas in the Heart", 2009), ("Tempest", 2012),
             ("Shadows in the Night", 2015), ("Fallen Angels", 2016),
             ("Triplicate", 2017), ("Rough and Rowdy Ways", 2020),
+            ("Shadow Kingdom", 2023),
         ],
     },
     "Radiohead": {
