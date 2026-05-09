@@ -206,10 +206,10 @@ if studio_df.empty:
     st.stop()
 
 c1, c2, c3, c4 = st.columns(4)
-c1.metric("Tracks (studio)", len(studio_df))
-c2.metric("Albums found", len(album_order))
-c3.metric("Years", f"{studio_df['year'].min()}–{studio_df['year'].max()}")
-c4.metric("Mean duration (min)", f"{studio_df['duration_ms'].mean()/60000:.1f}")
+c1.metric("Tracks", len(studio_df))
+c2.metric("Albums", len(album_order))
+c3.metric("Years", f"{studio_df['year'].min()}-{studio_df['year'].max()}")
+c4.metric("Avg min", f"{studio_df['duration_ms'].mean()/60000:.1f}")
 
 tab_albums, tab_audio, tab_lyrics, tab_top = st.tabs(
     ["Albums", "Audio features", "Lyrics", "Top words"]
