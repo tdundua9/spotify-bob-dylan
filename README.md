@@ -2,25 +2,25 @@
 
 Files:
 
-- `Spotify_Bob_Dylan.ipynb` - notebook (parts 1 and 2)
-- `app.py` - Streamlit web app (part 3)
-- `lyrics_ovh_extractor.py`, `enhanced_lyrics_retriever.py` - lyrics helpers from the dist.zip
-- `requirements.txt` - dependencies
-- `lyrics_cache.json` - lyrics cache (created on first run)
-- `build_notebook.py` - script that produces the .ipynb
+* `Spotify_Bob_Dylan.ipynb` - notebook for parts 1 and 2 of the assignment
+* `Spotify_Bob_Dylan.html` - HTML export of the notebook
+* `app.py` - Streamlit web app (part 3)
+* `URL.txt` - public URL of the deployed web app
+* `requirements.txt` - dependencies
+* `README.md` - project description and instructions
+* `tracks_small.csv` - filtered dataset for the deployed app
 
 ## Run
 
 ```bash
 pip install -r requirements.txt
-python build_notebook.py        # generates the .ipynb
 streamlit run app.py            # web app
+jupyter notebook Spotify_Bob_Dylan.ipynb   # notebook
 ```
 
-The notebook downloads `tracks_features.csv` (~346 MB) from Google Drive on first
-run, or you can place it manually in this folder.
+The notebook uses the original `tracks_features.csv` dataset. Because it is large (~346 MB), it is downloaded automatically when the notebook is run. The Streamlit app uses `tracks_small.csv`.
 
-## Export
+## Export to HTML
 
 ```bash
 jupyter nbconvert --to html Spotify_Bob_Dylan.ipynb
